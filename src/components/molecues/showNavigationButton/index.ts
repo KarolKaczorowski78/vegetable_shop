@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import ButtonProto from '../../atoms/button/button';
-
+import EBreakpoints from '../../../__types__/EBreakpoints';
+// left: -54px;
 export const Button = styled(ButtonProto)<{ visible: boolean }>`
   width: 50px;
   height: 50px;
   position: absolute;
   top: 0;
-  left: -54px;
+  right: calc(100% + 4px);
   transition: background .3s;
   background: ${({ visible }) => visible ? 'rgba(0, 0, 0, .6)' : '#D0A97A'};
   display: flex;
@@ -36,6 +37,13 @@ export const Button = styled(ButtonProto)<{ visible: boolean }>`
     ::after {
       top: ${({ visible }) => visible ? '0' : '7px'};
       transform: ${({ visible }) => visible ? 'rotate(-45deg)' : 'none'};
+    }
+  }
+  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
+    width: 40px;
+    height: 40px;
+    & > span {
+      width: 32px;
     }
   }
 `;

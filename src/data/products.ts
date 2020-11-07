@@ -21,6 +21,12 @@ import Banana from '../img/products/banana.webp';
 import Beetruit from '../img/products/beetruits.webp';
 import Pomegranate from '../img/products/pomegranate.jpg';
 import Corn from '../img/products/corn.jpg';
+import Asparagus from '../img/products/asparagus.webp';
+import Basil from '../img/products/basil.webp';
+import BroadBean from '../img/products/broadBean.webp';
+import Broccoli from '../img/products/broccoli.jpg';
+import Garlic from '../img/products/garlic.webp';
+import Lemon from '../img/products/lemon.webp';
 
 export const Products: IProduct[] = [
   {
@@ -155,5 +161,47 @@ export const Products: IProduct[] = [
     img: Pomegranate,
     price: 8,
     unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Szparagi',
+    category: ECategories.VEGS,
+    img: Asparagus,
+    price: 4.2,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Bazylia',
+    category: ECategories.WEEDS,
+    img: Basil,
+    price: 2.2,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Fasola',
+    category: ECategories.VEGS,
+    img: BroadBean,
+    price: 3.4,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Brokuł',
+    category: ECategories.VEGS,
+    img: Broccoli,
+    price: 6,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Czosnek',
+    category: ECategories.VEGS,
+    img: Garlic,
+    price: .8,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Cytryna',
+    category: ECategories.FRUITS,
+    img: Lemon,
+    price: .75,
+    unit: EUnits.PIECE,
   }
 ];

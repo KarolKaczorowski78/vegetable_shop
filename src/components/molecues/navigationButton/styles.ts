@@ -1,4 +1,5 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import SpanProto from '../../atoms/span/span';
 
 export const ButtonStyle = css`
   width: 95%;
@@ -11,4 +12,12 @@ export const ButtonStyle = css`
   justify-content: center;
   align-items: center;
   border: 1px solid white;
+`;
+
+export const Span = styled(SpanProto)`
+  position: relative;
+  & > svg {
+    position: absolute;
+    left: calc(100% + 5px); 
+  }
 `;

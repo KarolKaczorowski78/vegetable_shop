@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Nav, NavRelative, BackgroundImage, NonProductsNavigationButton } from './styles';
 import NavigationButton from '../../molecues/navigationButton';
 import ECategories from '../../../__types__/ECategories';
@@ -8,6 +9,10 @@ import { Button as ShowNavigationButton }  from '../../molecues/showNavigationBu
 export default function Navigation() {
 
   const [visible, setVisible] = useState<boolean>(false);
+
+  const location = useLocation();
+
+  useEffect(() => { setVisible(() => false) }, [location.pathname])
 
   return (
     <Nav visible={ visible }>

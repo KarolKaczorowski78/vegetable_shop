@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Button from '../../atoms/button/button';
 import Div from '../../atoms/div/div';
 
 export const Header = styled.header`

@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useContext, MouseEvent } from 'react';
+import { ProductFilters } from '../../../contexts/productFilters';
+import ERoutes from '../../../__types__/ERoutes';
 import styled, { FlattenSimpleInterpolation } from 'styled-components';
 import LinkProto from '../../atoms/link/link';
 import IRedirectToProductsButton from '../../../__types__/IRedirectToProductsButton';
@@ -12,10 +14,19 @@ const Link = styled(LinkProto)<{ additionalStyle: FlattenSimpleInterpolation }>`
   ${({ additionalStyle }) => additionalStyle};
 `;
 
-const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, additionalStyle }) => {
+const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, additionalStyle, category }) => {
 
-  const handleClick = () => {
-    // handle switchng filter
+  const { filter ,setFilters } = useContext(ProductFilters);
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    const { pathname } = window.location;
+
+    if (pathname === ERoutes.PRODUCTS) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    }
+    !(pathname !== ERoutes.PRODUCTS && filter === category) &&
+       setFilters(state => state === category ? false : category);
   }
 
   return (
