@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Button } from './styles';
 import INextSectionButton from '../../../__types__/INextSectionButton';
 
-const NextSectionButton: FC<INextSectionButton> = ({ targetSectionId, text }) => {
+const NextSectionButton: FC<INextSectionButton> = ({ targetSectionId, text, additionalStyle }) => {
   
   const handleClick = () => {
     const targetSection: HTMLElement | null = document.querySelector(`#${targetSectionId}`);
@@ -13,7 +13,7 @@ const NextSectionButton: FC<INextSectionButton> = ({ targetSectionId, text }) =>
   }
 
   return (
-    <Button onClick={ handleClick }>
+    <Button onClick={ handleClick } additionalStyle={ additionalStyle }>
       { text }
     </Button>
   )

@@ -8,7 +8,7 @@ const Img = styled(ImgProto)`
   left: 0;
   top: 0;
   width: 100%;
-  z-index: -1;
+  z-index: -2;
   height: 100%;
   @media (max-width: 650px) {
     display: none;

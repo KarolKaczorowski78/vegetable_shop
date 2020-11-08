@@ -27,6 +27,10 @@ import BroadBean from '../img/products/broadBean.webp';
 import Broccoli from '../img/products/broccoli.jpg';
 import Garlic from '../img/products/garlic.webp';
 import Lemon from '../img/products/lemon.webp';
+import Eggplant from '../img/products/eggplant.webp';
+import Parsley from '../img/products/parsley.webp';
+import Zucchini from '../img/products/zucchini.webp';
+import Watermelon from '../img/products/watermelon.webp';
 
 export const Products: IProduct[] = [
   {
@@ -203,5 +207,33 @@ export const Products: IProduct[] = [
     img: Lemon,
     price: .75,
     unit: EUnits.PIECE,
-  }
+  },
+  {
+    name: 'Bakłażan',
+    category: ECategories.VEGS,
+    img: Eggplant,
+    price: 1.3,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Pietruszka',
+    category: ECategories.WEEDS,
+    img: Parsley,
+    price: .8,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Cukinia',
+    category: ECategories.VEGS,
+    img: Zucchini,
+    price: 4.4,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Arbuz',
+    category: ECategories.FRUITS,
+    img: Watermelon,
+    price: 6.5,
+    unit: EUnits.KILOGRAMS,
+  },
 ];

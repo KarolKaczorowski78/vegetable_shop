@@ -1,12 +1,13 @@
-import styled from 'styled-components';
+import styled, { FlattenSimpleInterpolation } from 'styled-components';
 import ButtonProto from '../../atoms/button/button';
 
-export const Button = styled(ButtonProto)`
+export const Button = styled(ButtonProto)<{ additionalStyle: FlattenSimpleInterpolation | undefined }>`
   padding: 15px 40px;
   display: block;
   margin: 15px 0;
-
   border: none;
   box-shadow: 0 0 5px white;
-  background: rgba(255,255,255, .1)
+  font-weight: bold;
+  background: rgba(255,255,255, .2);
+  ${({ additionalStyle }) => additionalStyle && additionalStyle};
 `;
