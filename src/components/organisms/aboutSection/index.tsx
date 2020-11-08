@@ -8,7 +8,7 @@ import ShopOutsideImg from '../../../img/shopOutside.jpg';
 import Card from '../../molecues/card';
 
 export default function About() {
-  
+
 
   return (
     <Section id="about-us">
