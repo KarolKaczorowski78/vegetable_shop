@@ -10,10 +10,13 @@ import { GlobalStyle } from './theme/GlobalStyle';
 export default function App() {
 
   const [currentCategory, setCurrentCategory] = useState<ECategories | false>(false);
+  const [searchFilter, setSearchFilter] = useState<string>('');
 
   const providerValue: IProductFilters = {
     filter: currentCategory,
     setFilters: setCurrentCategory,
+    searchFilter: searchFilter,
+    setSearchFilter: setSearchFilter,
   }
 
   useEffect(() => { window.scrollTo(0, 0) }, [currentCategory]);

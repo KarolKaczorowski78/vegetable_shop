@@ -8,6 +8,8 @@ import Div from '../components/atoms/div/div';
 import { Products as Data } from '../data/products';
 import Product from '../components/molecues/product';
 import styled from 'styled-components';
+import SearchInput from '../components/molecues/searchInput';
+import { toSearchFormat } from '../universal/stringToSearchFormat';
 
 const Wrapper = styled(Div)`
   text-align: center;
@@ -28,17 +30,19 @@ const ProductsContainer = styled(Div)`
 
 export default function Products() {
   
-  const { filter } = useContext(ProductFilters);
+  const { filter, searchFilter } = useContext(ProductFilters);
 
   return (
     <Page>
       <Wrapper>
         <H1>Produkty w naszym sklepie</H1>
         <H2>Bazarek Radzikowskiego</H2>
+        <SearchInput />
         <ProductsContainer>
         {
           Data.map((product, i) =>  
-            (!filter || filter === product.category) &&
+            ((!filter || filter === product.category) && 
+            toSearchFormat(product.name).includes(toSearchFormat(searchFilter))) &&
               <Product { ...product } key={ i } />)
         }
         </ProductsContainer>

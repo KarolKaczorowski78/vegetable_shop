@@ -11,7 +11,7 @@ export const SectionWrapper = styled(Div)`
   width: 100%;
   height: auto;
   min-height: 100vh;
-  padding: 50px;
+  padding: 5%;
   position: relative;
 `;
 
@@ -23,6 +23,8 @@ export const Section = styled(SectionProto)`
   text-decoration: none;
   text-align: center;
   padding: 10px 15px;
+  min-width: 300px;
+  margin: 0 auto;
 `;
 
 export const AssetWrapper = styled(Div)`
@@ -57,6 +59,6 @@ export const Map = styled(Img)`
   box-shadow: 0 0 10px white;
   height: auto;
   @media (max-width: ${EBreakpoints.TABLET}) {
-    width: 300px;
+    width: 90%;
   }
 `;

@@ -3,5 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 export default interface IProductFilters {
   filter: ECategories | false,
-  setFilters: Dispatch<SetStateAction<ECategories | false>>
+  setFilters: Dispatch<SetStateAction<ECategories | false>>,
+  searchFilter: string,
+  setSearchFilter: Dispatch<SetStateAction<string>>,
 }

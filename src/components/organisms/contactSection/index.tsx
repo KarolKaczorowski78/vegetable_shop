@@ -7,6 +7,8 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import IconedListItem from '../../molecues/iconedListItem';
 import { ContactData } from '../../../data/contactData';
 
+const { phoneNumber, emailAdress } = ContactData;
+
 export default function ContactSection() {
 
   const benefits = [
@@ -21,15 +23,15 @@ export default function ContactSection() {
         <P>
           Numer telefonu:
           &nbsp; 
-          <a href="tel:111-222-333" style={{ color: 'white' }}>
-            { ContactData.phoneNumber }
+          <a href={ `tel:${phoneNumber}` } style={{ color: 'white' }}>
+            { phoneNumber }
           </a>
         </P>
         <P>
           E-mail:
           &nbsp; 
-          <a href="mailto:abcd@gmail.com" style={{ color: 'white' }}>
-            { ContactData.emailAdress }
+          <a href={ `mailto:${emailAdress}` } style={{ color: 'white' }}>
+            { emailAdress }
           </a></P> 
         <AssetWrapper>
           <Ul>

@@ -1,0 +1,1 @@
+export const toSearchFormat = (str: string) => str.toLowerCase().replace(/\s/g, '');
