@@ -19,13 +19,13 @@ const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, addi
   const { filter ,setFilters } = useContext(ProductFilters);
 
   const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-    const { pathname } = window.location;
+    const { hash } = window.location;
 
-    if (pathname === ERoutes.PRODUCTS) {
+    if (hash === `#${ERoutes.PRODUCTS}`) {
       e.preventDefault();
       window.scrollTo(0, 0);
     }
-    !(pathname !== ERoutes.PRODUCTS && filter === category) &&
+    !(hash !== `#${ERoutes.PRODUCTS}` && filter === category) &&
        setFilters(state => state === category ? false : category);
   }
 

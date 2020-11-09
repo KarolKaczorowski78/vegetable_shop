@@ -54,7 +54,7 @@ export const Ul = styled(UlProto)`
 
 export const Map = styled(Img)`
   width: 400px;
-
+  box-shadow: 0 0 10px white;
   height: auto;
   @media (max-width: ${EBreakpoints.TABLET}) {
     width: 300px;

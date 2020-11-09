@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Page from '../components/molecues/page';
 import { ProductFilters } from '../contexts/productFilters';
 import EBreakpoints from '../__types__/EBreakpoints';
 import H1 from '../components/atoms/h1/h1';
@@ -30,16 +31,18 @@ export default function Products() {
   const { filter } = useContext(ProductFilters);
 
   return (
-    <Wrapper>
-      <H1>Produkty w naszym sklepie</H1>
-      <H2>Bazarek Radzikowskiego</H2>
-      <ProductsContainer>
-      {
-        Data.map((product, i) =>  
-          (!filter || filter === product.category) &&
-            <Product { ...product } key={ i } />)
-      }
-      </ProductsContainer>
-    </Wrapper>
+    <Page>
+      <Wrapper>
+        <H1>Produkty w naszym sklepie</H1>
+        <H2>Bazarek Radzikowskiego</H2>
+        <ProductsContainer>
+        {
+          Data.map((product, i) =>  
+            (!filter || filter === product.category) &&
+              <Product { ...product } key={ i } />)
+        }
+        </ProductsContainer>
+      </Wrapper>
+    </Page>
   )
 }

@@ -25,8 +25,8 @@ export default function Navigation() {
         </ShowNavigationButton>
         <NonProductsNavigationButton to="/">Strona główna</NonProductsNavigationButton>
         {
-          Object.values(ECategories).map(category =>
-            <NavigationButton category={ category } />)
+          Object.values(ECategories).map((category, i) =>
+            <NavigationButton category={ category } key={ i } />)
         }
         <BackgroundImage src={ NavigationImg } alt="" />
         <NonProductsNavigationButton to="/gallery">Galeria</NonProductsNavigationButton>

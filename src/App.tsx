@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navigation from './components/organisms/navigation';
 import ECategories from './__types__/ECategories';
 import IProductFilters from './__types__/IProductFilters';
 import { ProductFilters } from './contexts/productFilters';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Routes } from './routes';
 import { GlobalStyle } from './theme/GlobalStyle';
 
@@ -16,6 +16,8 @@ export default function App() {
     setFilters: setCurrentCategory,
   }
 
+  useEffect(() => { window.scrollTo(0, 0) }, [currentCategory]);
+
   return (
     <>
       <GlobalStyle />
@@ -24,8 +26,8 @@ export default function App() {
           <Navigation />
           <Switch>
             {
-              Routes.map(route => 
-                <Route { ...route } />
+              Routes.map((route, i) => 
+                <Route { ...route } key={ i } />
               )
             }
           </Switch>

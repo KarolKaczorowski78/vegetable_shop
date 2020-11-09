@@ -5,6 +5,7 @@ import { Section, SectionWrapper, H2, P, Ul, Map, AssetWrapper } from './styles'
 import MapImg from '../../../img/map.jpg';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import IconedListItem from '../../molecues/iconedListItem';
+import { ContactData } from '../../../data/contactData';
 
 export default function ContactSection() {
 
@@ -21,14 +22,14 @@ export default function ContactSection() {
           Numer telefonu:
           &nbsp; 
           <a href="tel:111-222-333" style={{ color: 'white' }}>
-            111 222 333
+            { ContactData.phoneNumber }
           </a>
         </P>
         <P>
           E-mail:
           &nbsp; 
           <a href="mailto:abcd@gmail.com" style={{ color: 'white' }}>
-            abcd@gmail.com
+            { ContactData.emailAdress }
           </a></P> 
         <AssetWrapper>
           <Ul>
