@@ -39,9 +39,10 @@ export const Button = styled(ButtonProto)<{ visible: boolean }>`
       transform: ${({ visible }) => visible ? 'rotate(-45deg)' : 'none'};
     }
   }
-  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
+  @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
     width: 40px;
     height: 40px;
+
     & > span {
       width: 32px;
     }

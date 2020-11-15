@@ -14,7 +14,7 @@ const Slider: FC<ISlider> = ({ components }) => {
         gsap.timeline().to(container.current, {
           autoAlpha: 0,
           onComplete: () => { setIndex(state => state === components.length - 1 ? 0 : state + 1) }})
-          .to(container.current, { autoAlpha: 1, delay: .2 }); 
+          .to(container.current, { autoAlpha: 1, delay: .4 }); 
       }
     }, 5000);
   }, [])

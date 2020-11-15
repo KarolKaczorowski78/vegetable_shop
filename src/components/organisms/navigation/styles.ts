@@ -10,13 +10,16 @@ export const Nav = styled.nav<{ visible: boolean }>`
   height: 400px;
   position: fixed;
   right: -300px;
-  z-index: 2;
+  z-index: 4;
   transition: .3s ease-out;
   ${({ visible }) => visible && `transform: translateX(-300px)`};
   @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
     width: 250px;
     right: -250px;
     ${({ visible }) => visible && `transform: translateX(-250px)`};
+  }
+  @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
+    top: 5px;
   }
 `
 

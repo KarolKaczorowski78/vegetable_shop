@@ -31,7 +31,7 @@ const ProductsContainer = styled(Div)`
 export default function Products() {
   
   const { filter, searchFilter } = useContext(ProductFilters);
-
+  console.log(Data.length);
   return (
     <Page>
       <Wrapper>

@@ -7,4 +7,5 @@ export default interface IProduct {
   category: ECategories,
   price: number,
   unit: EUnits,
+  unavaible?: true,
 }

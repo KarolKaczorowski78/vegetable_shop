@@ -58,6 +58,8 @@ import Rosemary from '../img/products/rozmarine.jpg';
 import SweetPotato from '../img/products/sweetPotato.jpg';
 import Sorell from '../img/products/sorell.jpg';
 import TomatoesRaspberry from '../img/products/tomatoesRaspberry.jpg';
+import Pineapple from '../img/products/pineapple.jpg';
+import BlackTurnip from '../img/products/blackTurnip.jpg';
 
 export const Products: IProduct[] = [
   {
@@ -94,6 +96,7 @@ export const Products: IProduct[] = [
     img: GreenBean,
     price: 3,
     unit: EUnits.KILOGRAMS,
+    unavaible: true,
   },
   {
     name: 'Cebula',
@@ -215,7 +218,7 @@ export const Products: IProduct[] = [
     unit: EUnits.PIECE,
   },
   {
-    name: 'Fasola',
+    name: 'Bób',
     category: ECategories.VEGS,
     img: BroadBean,
     price: 3.4,
@@ -444,5 +447,19 @@ export const Products: IProduct[] = [
     img: TomatoesRaspberry,
     price: 7.2,
     unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Czarna rzepa 5kg',
+    category: ECategories.VEGS,
+    img: BlackTurnip,
+    price: 10,
+    unit: EUnits.PIECE,
+  },
+  {
+    name: 'Ananas premium',
+    category: ECategories.FRUITS,
+    img: Pineapple,
+    price: 7,
+    unit: EUnits.PIECE,
   }
 ];
