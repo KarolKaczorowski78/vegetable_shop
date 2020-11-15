@@ -35,7 +35,7 @@ export const Div = styled(DivProto)`
 // height: 65%;
 export const ProductsContainer = styled(DivProto)`
   width: 100%;
-  flex: .9;
+  flex: 1;
   border-bottom: 1px solid white;
   overflow-y: auto;
   display: flex;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ButtonProto from '../../atoms/button/button';
 import EBreakpoints from '../../../__types__/EBreakpoints';
-// left: -54px;
+
 export const Button = styled(ButtonProto)<{ visible: boolean }>`
   width: 50px;
   height: 50px;

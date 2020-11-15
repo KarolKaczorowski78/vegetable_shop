@@ -15,9 +15,8 @@ import Pears from '../img/products/pear.jpg';
 import Pumpkin from '../img/products/pumpkin.webp';
 import Radish from '../img/products/radish.jpg';
 import Salad from '../img/products/salad.webp';
-import Tomatoes from '../img/products/tomatoes.webp';
+import Tomatoes from '../img/products/tomatoes.jpg';
 import Banana from '../img/products/banana.webp';
-// import Beetruit from '../img/products/beetruits.webp';
 import PepperRed from '../img/products/redPepper.jpg';
 import Pomegranate from '../img/products/pomegranate.jpg';
 import Corn from '../img/products/corn.jpg';
@@ -169,7 +168,7 @@ export const Products: IProduct[] = [
     unit: EUnits.PIECE,
   },
   {
-    name: 'Pomidory',
+    name: 'Pomidor czerwony',
     category: ECategories.VEGS,
     img: Tomatoes,
     price: 4.5,
@@ -442,7 +441,7 @@ export const Products: IProduct[] = [
     unit: EUnits.KILOGRAMS,
   },
   {
-    name: 'Pomidory malinowe',
+    name: 'Pomidor malinowy',
     category: ECategories.VEGS,
     img: TomatoesRaspberry,
     price: 7.2,
