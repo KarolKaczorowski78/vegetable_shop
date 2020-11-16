@@ -3,6 +3,7 @@ import DivProto from '../../atoms/div/div';
 import ButtonProto from '../../atoms/button/button';
 import EBreakpoints from '../../../__types__/EBreakpoints';
 import LinkProto from '../../atoms/link/link';
+import SpanProto from '../../atoms/span/span';
 
 export const Div = styled(DivProto)`
   width: 800px;
@@ -92,4 +93,10 @@ export const Link = styled(LinkProto)`
   border: 2px solid white;
   text-decoration: none;
   padding: 6px 12px;
+`;
+
+export const Span = styled(SpanProto)`
+  font-weight: bold;
+  font-size: .9rem;
+  display: block;
 `;

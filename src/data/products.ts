@@ -129,7 +129,7 @@ export const Products: IProduct[] = [
     unit: EUnits.KILOGRAMS,
   },
   {
-    name: 'Winogrona',
+    name: 'Winogrona białe',
     category: ECategories.FRUITS,
     img: Grapes,
     price: 5.5,

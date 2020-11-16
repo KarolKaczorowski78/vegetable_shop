@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import DivProto from '../../atoms/div/div';
 import ImgProto from '../../atoms/img/img';
 import EBrakPoints from '../../../__types__/EBreakpoints';
+import SpanProto from '../../atoms/span/span';
+import InputProto from '../../atoms/input/input';
 
 export const Div = styled(DivProto)`
   width: 300px;
@@ -30,3 +32,15 @@ export const Img = styled(ImgProto)`
   }
 `;
 
+export const Span = styled(SpanProto)`
+  font-size: .9rem;
+`;
+
+export const Input = styled(InputProto)`
+  width: 80px;
+  height: 25px;
+  padding: 3px 6px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+`;

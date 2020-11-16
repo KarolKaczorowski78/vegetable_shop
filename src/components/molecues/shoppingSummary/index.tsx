@@ -20,17 +20,17 @@ export default function Index() {
           {
             products.length > 0 ?
             products.map(({ name, ammount, unit, price }) => 
-            <Li>
-              <Span style={{ textAlign: 'left', }}>
-                { name }
-                <Span style={{ fontSize: '.6rem', display: 'block', }}>
-                  { `Waga: ${ammount} ${unit}` }
+              <Li>
+                <Span style={{ textAlign: 'left', }}>
+                  { name }
+                  <Span style={{ fontSize: '.6rem', display: 'block', }}>
+                    { `Ilość: ${ammount} ${unit}` }
+                  </Span>
                 </Span>
-              </Span>
-              <Span>
-                { `${(ammount * price).toFixed(2)} zł` }
-              </Span>
-            </Li>
+                <Span>
+                  { `${(ammount * price).toFixed(2)} zł` }
+                </Span>
+              </Li>
             )
             :
             <P>Twoja lista jest pusta</P>

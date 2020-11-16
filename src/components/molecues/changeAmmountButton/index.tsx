@@ -4,7 +4,7 @@ import { Button } from './styles';
 import IChangeAmmountButton from '../../../__types__/IChangeAmmountButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ChangeAmmountButton: FC<IChangeAmmountButton> = ({ icon, changeValue, productName }) => {
+const ChangeAmmountButton: FC<IChangeAmmountButton> = ({ icon, productName, changeValue }) => {
 
   const { setCartProducts } = useContext(CartProducts);
 

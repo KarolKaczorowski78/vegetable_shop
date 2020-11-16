@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Div, ProductsContainer, ToggleVisibilityButton, Link } from './styles';
+import { Div, ProductsContainer, ToggleVisibilityButton, Link, Span } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import CartProduct from '../../molecues/cartProduct';
@@ -16,6 +16,8 @@ export default function ShoppingCart() {
 
   const [visible, setVisible] = useState<boolean>(false);
   const ref = useRef<HTMLDivElement>(null);
+  const totalPrice = products.length > 0 ? products.map(({ price, ammount }) => price * ammount)
+      .reduce((acc, curr) => acc + curr) : 0;
 
   useEffect(() => {
     const [transformValueY, alphaValue] = visible ? [0, 1] : [25, 0];
@@ -51,17 +53,20 @@ export default function ShoppingCart() {
         <H2>
           Łącznie:&nbsp;
           { 
-            products.length > 0 ? 
-              products.map(({ price, ammount }) => price * ammount)
-                .reduce((acc, curr) => acc + curr).toFixed(2)
-              :
-              0
+            totalPrice.toFixed(2)
           }
           &nbsp;zł
         </H2>
-        <Link to={ ERoutes.SEND_ORDER }>
-          Przejdź do zamówienia
-        </Link>
+        {
+          totalPrice < 30 ?
+            <Span>
+              Brakuje { (30 - totalPrice).toFixed(2) } zł do minimalnej ceny dostawy   
+            </Span> 
+            :
+            <Link to={ ERoutes.SEND_ORDER }>
+              Przejdź do zamówienia
+            </Link>
+        }
       </Div>
     </>
   )
