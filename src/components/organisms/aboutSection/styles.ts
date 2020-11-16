@@ -28,7 +28,7 @@ export const P = styled(PProto)`
 export const Div = styled(DivProto)`
   background: #D0A97A;
   text-shadow: 0 0 7px white;
-  width: 500px;
+  width: 550px;
   position: relative;
   padding: 20px 25px;
   box-shadow: 0 0 10px black;

@@ -59,6 +59,9 @@ import Sorell from '../img/products/sorell.jpg';
 import TomatoesRaspberry from '../img/products/tomatoesRaspberry.jpg';
 import Pineapple from '../img/products/pineapple.jpg';
 import BlackTurnip from '../img/products/blackTurnip.jpg';
+import HungarianSalad from '../img/products/hungarianSalad.jpg';
+import PickledCucumbers from '../img/products/pickledCucumber.jpg';
+import Jarzynes from '../img/products/jarzynes.jpg';
 
 export const Products: IProduct[] = [
   {
@@ -105,8 +108,8 @@ export const Products: IProduct[] = [
     unit: EUnits.KILOGRAMS,
   },
   {
-    name: 'Jabłka',
-    category: ECategories.FRUITS,
+    name: 'Jabłko',
+    category: [ECategories.APPLES, ECategories.FRUITS],
     img: Apples,
     price: 3,
     unit: EUnits.KILOGRAMS,
@@ -119,7 +122,7 @@ export const Products: IProduct[] = [
     unit: EUnits.PIECE,
   },
   {
-    name: 'Ogórki kiszone',
+    name: 'Ogórkek małosolny',
     category: ECategories.VEGS,
     img: CucumbersPickled,
     price: 2.5,
@@ -322,17 +325,17 @@ export const Products: IProduct[] = [
     unit: EUnits.PIECE,
   },
   {
-    name: 'Jaja przepiórcze 10 szt.',
+    name: 'Jaja wiejskie',
     category: ECategories.ARTICLES,
     img: Eggs,
-    price: 10,
+    price: 1.1,
     unit: EUnits.PIECE,
   },
   {
-    name: 'Jaja wiejskie',
+    name: 'Jaja przepiórcze 10 szt.',
     category: ECategories.ARTICLES,
     img: EggsCountry,
-    price: 1.1,
+    price: 10,
     unit: EUnits.PIECE,
   },
   {
@@ -460,5 +463,75 @@ export const Products: IProduct[] = [
     img: Pineapple,
     price: 7,
     unit: EUnits.PIECE,
-  }
+  },
+  {
+    name: 'Sałatka węgierska',
+    category: ECategories.SILAGE,
+    img: HungarianSalad,
+    price: 18,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Jabłka odmnay',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 7,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Szara reneta',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 7,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Rubin',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Champion',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Mutsu',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Eliza',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Price',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: Apples,
+    price: 5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Ogórek kiszony',
+    category: [ECategories.SILAGE, ECategories.VEGS],
+    img: PickledCucumbers,
+    price: 11,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Jarzyny',
+    category: ECategories.VEGS,
+    img: Jarzynes,
+    price: 4.5,
+    unit: EUnits.PIECE,
+  },
 ];

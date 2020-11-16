@@ -12,6 +12,7 @@ export const ButtonStyle = css`
   justify-content: center;
   align-items: center;
   border: 1px solid white;
+  margin: 5px 0;
 `;
 
 export const Span = styled(SpanProto)`

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
-import { Div, ProductsContainer, ToggleVisibilityButton } from './styles';
+import { Div, ProductsContainer, ToggleVisibilityButton, Link } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import CartProduct from '../../molecues/cartProduct';
 import { CartProducts } from '../../../contexts/cartProducts';
+import ERoutes from '../../../__types__/ERoutes';
 import H1 from '../../atoms/h1/h1';
 import H2 from '../../atoms/h2/h2';
 import P from '../../atoms/p/p';
@@ -21,6 +22,10 @@ export default function ShoppingCart() {
     
     gsap.to(ref.current, { y: transformValueY, autoAlpha: alphaValue, duration: .4 });
   }, [visible]);
+
+  useEffect(() => {
+    products.length > 0 && setVisible(() => true);
+  }, [products.length])
 
   return (
     <>
@@ -54,6 +59,9 @@ export default function ShoppingCart() {
           }
           &nbsp;zł
         </H2>
+        <Link to={ ERoutes.SEND_ORDER }>
+          Przejdź do zamówienia
+        </Link>
       </Div>
     </>
   )

@@ -9,6 +9,7 @@ import { Products as Data } from '../data/products';
 import Product from '../components/molecues/product';
 import styled from 'styled-components';
 import SearchInput from '../components/molecues/searchInput';
+import ShoppingCart from '../components/organisms/shoppingCart';
 import { toSearchFormat } from '../universal/stringToSearchFormat';
 
 const Wrapper = styled(Div)`
@@ -31,9 +32,10 @@ const ProductsContainer = styled(Div)`
 export default function Products() {
   
   const { filter, searchFilter } = useContext(ProductFilters);
-  console.log(Data.length);
+
   return (
     <Page>
+      <ShoppingCart />
       <Wrapper>
         <H1>Produkty w naszym sklepie</H1>
         <H2>Bazarek Radzikowskiego</H2>
@@ -41,7 +43,7 @@ export default function Products() {
         <ProductsContainer>
         {
           Data.map((product, i) =>  
-            ((!filter || filter === product.category) && 
+            ((!filter || filter === product.category || product.category.includes(filter)) && 
             toSearchFormat(product.name).includes(toSearchFormat(searchFilter))) &&
               <Product { ...product } key={ i } />)
         }

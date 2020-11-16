@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import DivProto from '../../atoms/div/div';
 import ButtonProto from '../../atoms/button/button';
 import EBreakpoints from '../../../__types__/EBreakpoints';
+import LinkProto from '../../atoms/link/link';
 
 export const Div = styled(DivProto)`
   width: 800px;
@@ -15,7 +16,7 @@ export const Div = styled(DivProto)`
   color: white;
   border-radius: 5%;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 10px 10px;
   transform: translateY(15px);
   visible: hidden;
   opacity: 0;
@@ -32,7 +33,7 @@ export const Div = styled(DivProto)`
     margin-right: -150px;
   }
 `;
-// height: 65%;
+
 export const ProductsContainer = styled(DivProto)`
   width: 100%;
   flex: 1;
@@ -83,4 +84,12 @@ export const ToggleVisibilityButton = styled(ButtonProto)<{ text: number }>`
     width: 40px;
     height: 40px;
   }
+`;
+
+export const Link = styled(LinkProto)`
+  color: white;
+  background: rgba(0, 0, 0, .8);
+  border: 2px solid white;
+  text-decoration: none;
+  padding: 6px 12px;
 `;

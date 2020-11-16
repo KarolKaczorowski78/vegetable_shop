@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './components/organisms/navigation';
 import ECategories from './__types__/ECategories';
 import IProductFilters from './__types__/IProductFilters';
-import ShoppingCart from './components/organisms/shoppingCart';
 import ICartProduct from './__types__/ICartProduct';
 import { CartProducts } from './contexts/cartProducts';
 import { ProductFilters } from './contexts/productFilters';
@@ -38,7 +37,6 @@ export default function App() {
         <ProductFilters.Provider value={ providerValue }>
           <CartProducts.Provider value={ providerValue2 }>
             <Navigation />
-            <ShoppingCart />
             <Switch>
               {
                 Routes.map((route, i) => 
