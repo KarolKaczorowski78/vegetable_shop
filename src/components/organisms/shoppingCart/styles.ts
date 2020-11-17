@@ -26,12 +26,16 @@ export const Div = styled(DivProto)`
   align-items: center;
   flex-direction: column;
   @media (max-width: ${EBreakpoints.LAPTOP}) {
-    width: 355px;
-    margin-right: -177.5px;
+    width: 580px;
+    margin-right: -290px;
   }
   @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
-    width: 300px;
-    margin-right: -150px;
+    width: 370px;
+    margin-right: -185px;
+  }
+  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
+    width: 280px;
+    margin-right: -140px;
   }
 `;
 
@@ -75,9 +79,6 @@ export const ToggleVisibilityButton = styled(ButtonProto)<{ text: number }>`
       text-align: center;
       font-size: .6rem;
     }
-  }
-  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
-
   }
   @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
     top: 5px;

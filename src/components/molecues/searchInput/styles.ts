@@ -13,5 +13,6 @@ export const Input = styled(InputProto)`
   border: none;
   @media (max-width: ${EBreakpoints.TABLET}) {
     width: 280px;
+    height: 40px;
   }
 `;

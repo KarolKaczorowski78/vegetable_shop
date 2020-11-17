@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import ButtonProto from '../../atoms/button/button';
+import DivProto from '../../atoms/div/div';
 
 export const Form = styled.form`
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
-  flex-direction: column;
   padding: 10px 30px 20px;
+  flex-wrap: wrap;
 `;
 
 export const Input = styled.input`
@@ -29,4 +30,12 @@ export const Button = styled(ButtonProto)`
   margin-top: 25px;
   border: none;
   box-shadow: 0 0 8px black;
+`;
+
+export const Div = styled(DivProto)`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 30px 20px;
+  flex-direction: column;
 `;

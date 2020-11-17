@@ -43,4 +43,7 @@ export const Input = styled(InputProto)`
   background: black;
   color: white;
   border: 1px solid white;
+  @media (max-width: ${EBrakPoints.TABLET_SMALL}) {
+    width: 60px;
+  }
 `;

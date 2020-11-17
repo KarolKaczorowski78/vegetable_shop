@@ -62,6 +62,11 @@ import BlackTurnip from '../img/products/blackTurnip.jpg';
 import HungarianSalad from '../img/products/hungarianSalad.jpg';
 import PickledCucumbers from '../img/products/pickledCucumber.jpg';
 import Jarzynes from '../img/products/jarzynes.jpg';
+import AppleGrey from '../img/products/appleGrey.jpg';
+import AppleGala from '../img/products/appleGala.jpg';
+import AppleRuby from '../img/products/appleRuby.jpg';
+import AppleLigol from '../img/products/appleLigol.jpg';
+import ApplePrince from '../img/products/applePrince.jpg';
 
 export const Products: IProduct[] = [
   {
@@ -479,20 +484,6 @@ export const Products: IProduct[] = [
     unit: EUnits.KILOGRAMS,
   },
   {
-    name: 'Szara reneta',
-    category: [ECategories.FRUITS, ECategories.APPLES],
-    img: Apples,
-    price: 7,
-    unit: EUnits.KILOGRAMS,
-  },
-  {
-    name: 'Rubin',
-    category: [ECategories.FRUITS, ECategories.APPLES],
-    img: Apples,
-    price: 5,
-    unit: EUnits.KILOGRAMS,
-  },
-  {
     name: 'Champion',
     category: [ECategories.FRUITS, ECategories.APPLES],
     img: Apples,
@@ -514,13 +505,6 @@ export const Products: IProduct[] = [
     unit: EUnits.KILOGRAMS,
   },
   {
-    name: 'Price',
-    category: [ECategories.FRUITS, ECategories.APPLES],
-    img: Apples,
-    price: 5,
-    unit: EUnits.KILOGRAMS,
-  },
-  {
     name: 'Ogórek kiszony',
     category: [ECategories.SILAGE, ECategories.VEGS],
     img: PickledCucumbers,
@@ -533,5 +517,40 @@ export const Products: IProduct[] = [
     img: Jarzynes,
     price: 4.5,
     unit: EUnits.PIECE,
+  },
+  {
+    name: 'Jabłko gala',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: AppleGala,
+    price: 6,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Jabłko prince',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: ApplePrince,
+    price: 7,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Jabłko rubin',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: AppleRuby,
+    price: 7.5,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Szara reneta',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: AppleGrey,
+    price: 8.2,
+    unit: EUnits.KILOGRAMS,
+  },
+  {
+    name: 'Jabłko ligol',
+    category: [ECategories.FRUITS, ECategories.APPLES],
+    img: AppleLigol,
+    price: 7.5,
+    unit: EUnits.KILOGRAMS,
   },
 ];

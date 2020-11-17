@@ -5,13 +5,9 @@ import H2 from '../../atoms/h2/h2';
 import Span from '../../atoms/span/span';
 import P from '../../atoms/p/p';
 
-export default function Index() {
+export default function ShoppingSummary(props: { productsPrice: number, supplyPrice: number }) {
   
   const { products } = useContext(CartProducts);
-  const totalPrice = products.length > 0 ? products.map(({ price, ammount }) => price * ammount)
-                            .reduce((acc, curr) => acc + curr) : 0;
-
-  const supplyPrice = totalPrice < 60 ? 5 : 0;
 
   return (
     <Div>
@@ -19,8 +15,8 @@ export default function Index() {
         <Ul>
           {
             products.length > 0 ?
-            products.map(({ name, ammount, unit, price }) => 
-              <Li>
+            products.map(({ name, ammount, unit, price }, i) => 
+              <Li key={ i }>
                 <Span style={{ textAlign: 'left', }}>
                   { name }
                   <Span style={{ fontSize: '.6rem', display: 'block', }}>
@@ -36,9 +32,13 @@ export default function Index() {
             <P>Twoja lista jest pusta</P>
           }
         </Ul>
-        <H4>Produkty: { totalPrice.toFixed(2) } zł</H4>
-        <H4>Dostawa: { supplyPrice.toFixed(2) } zł</H4>
-        <H3>Razem: { (totalPrice + supplyPrice).toFixed(2) } zł</H3>
+        <H4>Produkty: { props.productsPrice.toFixed(2) } zł</H4>
+        <H4>Dostawa: { props.supplyPrice.toFixed(2) } zł</H4>
+        <H3>Razem: 
+          <output name="sum">
+            { (props.productsPrice + props.supplyPrice).toFixed(2) } zł
+          </output>
+          </H3>
     </Div>
   )
 }

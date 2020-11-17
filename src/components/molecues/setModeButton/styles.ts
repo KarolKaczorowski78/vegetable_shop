@@ -6,4 +6,5 @@ export const Button = styled(ButtonProto)`
   color: lime;
   font-size: 16px;
   border: none;
+  width: 30px;
 `;

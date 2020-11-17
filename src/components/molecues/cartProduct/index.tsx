@@ -6,6 +6,7 @@ import RemoveFromCartButton from '../removeFromCartButton';
 import { useInView } from 'react-intersection-observer';
 import gsap from 'gsap';
 import SetModeButton from '../setModeButton';
+import EUnits from '../../../__types__/EUnits';
 
 const CartProduct: FC<ICartProduct> = ({ name, img, ammount, unit, price }) => {
   
@@ -37,7 +38,11 @@ const CartProduct: FC<ICartProduct> = ({ name, img, ammount, unit, price }) => {
             min="0"
             value={ inputValue }
             onChange={ (e: ChangeEvent<HTMLInputElement>) => { 
-              setInputValue(parseFloat(e.target.value)) 
+              const val = parseFloat(e.target.value);
+              (val % 1 === 0 || unit !== EUnits.PIECE) && setInputValue(val);
+              // const val = parseFloat(e.target.value);
+              // unit === EUnits.PIECE ? setInputValue(parseFloat)
+              // (val % 1 === 0 || unit === EUnits.PIECE) && setInputValue(val); 
             } }
           />
       }
@@ -47,18 +52,3 @@ const CartProduct: FC<ICartProduct> = ({ name, img, ammount, unit, price }) => {
 }
 
 export default CartProduct;
-
-      // {/* <button> */}        // {/* <FontAwesomeIcon  */}
-          // {/* // icon={ editMode ? faCheck : faEdit }  */}
-          // {/* // onClick={  */}
-            // {/* // editMode ? () => {  } */}
-          // {/* // } */}
-        // {/* /> */}
-      // {/* </button> */}
-      // {/* <P> */}
-        // {/* <ChangeAmmountButton icon={ faPlus } changeValue={ 1 } productName={ name } /> */}
-        // 
-        // {/* Ilość: { ammount } { unit } */}
-        // {/* <ChangeAmmountButton icon={ faMinus } changeValue={ -1 } productName={ name } /> */}
-      // {/* </P> */}
-      // {/* <ChangeAmmountButton icon={  } /> */}

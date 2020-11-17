@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Div from '../components/atoms/div/div';
 import Form from '../components/molecues/form';
 import Page from '../components/molecues/page';
-import ShoppingSummary from '../components/molecues/shoppingSummary';
+// import ShoppingSummary from '../components/molecues/shoppingSummary';
 import H1 from '../components/atoms/h1/h1';
 import Span from '../components/atoms/span/span';
 import P from '../components/atoms/p/p';
@@ -34,7 +34,7 @@ export default function SendingOrder() {
         </P>
       </Span>
       <Form />
-      <ShoppingSummary />
+      {/* <ShoppingSummary /> */}
     </Page>
     </Wrapper>
   )
