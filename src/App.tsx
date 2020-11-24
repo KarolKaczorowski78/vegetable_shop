@@ -27,7 +27,7 @@ export default function App() {
     products: cartProducts,
     setCartProducts: setCartProducts,
   }
-
+  
   useEffect(() => { window.scrollTo(0, 0) }, [currentCategory]);
 
   return (

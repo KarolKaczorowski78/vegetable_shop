@@ -35,9 +35,7 @@ export default function ShoppingSummary(props: { productsPrice: number, supplyPr
         <H4>Produkty: { props.productsPrice.toFixed(2) } zł</H4>
         <H4>Dostawa: { props.supplyPrice.toFixed(2) } zł</H4>
         <H3>Razem: 
-          <output name="sum">
             { (props.productsPrice + props.supplyPrice).toFixed(2) } zł
-          </output>
           </H3>
     </Div>
   )

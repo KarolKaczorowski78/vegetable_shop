@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import ButtonProto from '../../atoms/button/button';
 import DivProto from '../../atoms/div/div';
+import EBreakPoints from '../../../__types__/EBreakpoints';
 
 export const Form = styled.form`
+  max-width: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: flex-start;
@@ -17,6 +19,9 @@ export const Input = styled.input`
   border: 1px solid black;
   margin-top: 5px;
   background: ghostwhite;
+  @media(max-width: ${EBreakPoints.MOBILE_SMALL}) {
+    width: 250px;
+  }
 `;
 
 export const Label = styled.label`

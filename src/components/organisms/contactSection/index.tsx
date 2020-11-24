@@ -1,8 +1,7 @@
 import React from 'react';
 import BackgroundImage from '../../molecues/BackgroundImage';
 import ContactBackgroundImage from '../../../img/aboutBackground.jpg';
-import { Section, SectionWrapper, H2, P, Ul, Map, AssetWrapper } from './styles';
-import MapImg from '../../../img/map.jpg';
+import { Section, SectionWrapper, H2, P, Ul, AssetWrapper } from './styles';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import IconedListItem from '../../molecues/iconedListItem';
 import { ContactData } from '../../../data/contactData';
@@ -36,15 +35,21 @@ export default function ContactSection() {
         <AssetWrapper>
           <Ul>
             {
-              benefits.map(benefit =>
+              benefits.map((benefit, i) =>
                 <IconedListItem 
                   icon={ faCheck }
                   iconColor="lime"
                   text={ benefit }
+                  key={ i }
                 />)
             }
           </Ul>
-          <Map src={ MapImg } alt="" />
+          {/* <Map src={ MapImg } alt="" /> */}
+          <iframe 
+            title="map"
+            src="https://www.google.com/maps/d/u/0/embed?mid=1LPBn3dcoCYB8kiKR3qLtGO5-Fm4LtcLr" 
+            width="300" 
+            height="250"></iframe>
         </AssetWrapper>
       </Section>
     </SectionWrapper>

@@ -1,14 +1,16 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Container, Img, H2, P } from './styles';
-import IProduct from '../../../__types__/IProduct';
 import AddToCartButton from '../addToCartButton';
 import { useInView } from 'react-intersection-observer';
+import INewProduct from '../../../__types__/INewProduct';
 import gsap from 'gsap';
+import path from 'path';
+import  { } from '../../../'
 
-const Product: FC<IProduct> = (props) => {
+const Product: FC<INewProduct> = (props) => {
 
-  const { name, img, price, unit, unavaible } = props;
-
+  const { Name, Image, Price, Unit } = props;
+  const imgUrl = path.join('http://localhost:1337/upload/files/') + Image[0].name;
   const { ref, inView, entry } = useInView({ 
     threshold: .3,
     triggerOnce: true,
@@ -20,14 +22,13 @@ const Product: FC<IProduct> = (props) => {
 
   return (
     <Container ref={ ref }>
-      <Img src={ inView ? img : '' } alt="" />
-      <H2>{ name }</H2>
+      <Img src={ inView ? imgUrl : '' } alt="" />
+      <H2>{ Name }</H2>
       <P>{ 
-        (price && unit) && `${price.toFixed(2)} zł/${unit}` 
+        (Price && Unit) && `${Price.toFixed(2)} zł/${Unit}` 
       }</P>
       <AddToCartButton 
         productDetails={ props } 
-        unavaible={ unavaible }
         parentElement={ entry?.target }  
       />
     </Container>

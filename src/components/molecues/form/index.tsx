@@ -4,6 +4,8 @@ import H2 from '../../atoms/h2/h2';
 import ShoppingSummary from '../shoppingSummary';
 import { CartProducts } from '../../../contexts/cartProducts';
 import { sendEmail } from '../../../universal/sendEmail';
+// import { isValidEmail } from '../../../universal/isValidEmail';
+// import { isValidPhoneNumber } from '../../../universal/isValidPhoneNumber';
 
 export default function OrderForm() {
 
@@ -12,7 +14,7 @@ export default function OrderForm() {
   const productsPrice = products.length > 0 ? products.map(({ price, ammount }) => price * ammount)
           .reduce((acc, curr) => acc + curr) : 0;
 
-  const supplyPrice = productsPrice < 30 ? 5 : 0;
+  const supplyPrice = productsPrice < 60 ? 5 : 0;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,19 +36,27 @@ export default function OrderForm() {
       <Button type="submit">
         Wyślij zamówienie
       </Button>
-      <input 
-        name="products-price"
-        hidden 
-        value={ productsPrice.toFixed(2) } 
-      />
-        <input name="supply-price" hidden value={ supplyPrice.toFixed(2) } />
-        <input name="total-price" hidden value={ (productsPrice + supplyPrice).toFixed(2) }/>
-        <input 
+      <Label htmlFor="products-price" hidden>
+        <Input 
+          name="products-price"
+          hidden 
+          value={ productsPrice.toFixed(2) } 
+        />
+      </Label>
+      <Label htmlFor="supply-price" hidden>
+        <Input name="supply-price" hidden value={ supplyPrice.toFixed(2) } />
+      </Label>
+      <Label htmlFor="total-price" hidden>
+        <Input name="total-price" hidden value={ (productsPrice + supplyPrice).toFixed(2) }/>
+      </Label>
+      <Label htmlFor="products" hidden>
+        <Input 
           name="products" 
           hidden 
           value={ products.map(({ name, ammount, unit }) => 
               `${name} ${ammount} ${unit}`).join(', ') }
-            />
+          />
+      </Label>
       </Div>
       <ShoppingSummary 
         productsPrice={ productsPrice } 

@@ -23,12 +23,13 @@ export default function Header() {
 
   const offerCards: ReactNode[] = [
     <OfferCard 
+      key={ 1 }
       icon={ faAppleAlt } 
       img={ FruitsImg } 
       category={ ECategories.FRUITS } 
     />,
-    <OfferCard icon={ faCarrot } img={ VegetablesImg } category={ ECategories.VEGS } />,
-    <OfferCard icon={ faSeedling } img={ ArticlesImg } category={ ECategories.ARTICLES } />,
+    <OfferCard icon={ faCarrot } img={ VegetablesImg } category={ ECategories.VEGS } key={ 2 } />,
+    <OfferCard icon={ faSeedling } img={ ArticlesImg } category={ ECategories.ARTICLES } key={ 3 } />,
   ]
 
   return (
@@ -41,7 +42,8 @@ export default function Header() {
       </Intro>
       <BackgroundImage src={ HeaderBackground } alt="" />
       { 
-        windowWidth > 1200 ? offerCards.map(card => card) : <Slider components={ offerCards } />
+        windowWidth > 1200 ? offerCards.map((card) => card) : 
+          <Slider components={ offerCards } />
       }
     </HeaderStyled>
   )

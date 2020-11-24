@@ -5,10 +5,10 @@ import { CartProducts } from '../../../contexts/cartProducts';
 import IAddToCartButton from '../../../__types__/IAddToCartButton';
 import gsap from 'gsap';
 
-const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, unavaible, parentElement }) => {
+const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, parentElement }) => {
 
   let { products, setCartProducts } = useContext(CartProducts);
-  const { name, img, unit, price } = productDetails;
+  const { Name, Image, Unit, Price, Availability } = productDetails;
 
   const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
@@ -16,14 +16,14 @@ const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, unavaible, pare
     if (!isAnimated) {
       setIsAnimated(() => true);
 
-      const result = products.find(({ name }) => name === productDetails.name);
+      const result = products.find(({ name }) => name === Name);
 
       result ? result.ammount++ : setCartProducts(state => [...state, { 
-        name: name,
-        img: img,
+        name: Name,
+        img: Image,
         ammount: 1,
-        unit: unit,
-        price: price,
+        unit: Unit,
+        price: Price,
       }]);
   
       parentElement && gsap.timeline({ defaults: { duration: .3 } })
@@ -32,12 +32,12 @@ const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, unavaible, pare
       }
   }
 
-  return unavaible ?
-    <P>Produkt niedostępny</P> 
-    :
+  return Availability ?
     <Button onClick={ handleClick }>
       Do koszyka
     </Button>
+    :
+    <P>Produkt niedostępny</P> 
 }
 
 export default AddToCartButton;
