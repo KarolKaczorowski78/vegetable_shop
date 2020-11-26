@@ -20,16 +20,21 @@ export const Div = styled(DivProto)`
     width: 240px;
   }
 `;
-
-export const Img = styled(ImgProto)`
+export const ImgContainer = styled(DivProto)`
   width: 100%;
   display: block;
   margin: auto;
   height: 220px;
-  object-fit: cover;
+  position: relative;
   @media (max-width: ${EBrakPoints.MOBILE_BIG}) {
     height: 160px;
   }
+`;
+
+export const Img = styled(ImgProto)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const Span = styled(SpanProto)`

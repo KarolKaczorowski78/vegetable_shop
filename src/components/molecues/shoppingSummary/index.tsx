@@ -4,6 +4,7 @@ import { Ul, Li, Div, H4, H3 } from './styles';
 import H2 from '../../atoms/h2/h2';
 import Span from '../../atoms/span/span';
 import P from '../../atoms/p/p';
+import InputStatusHolder from '../validationStatusHolder';
 
 export default function ShoppingSummary(props: { productsPrice: number, supplyPrice: number }) {
   
@@ -32,7 +33,13 @@ export default function ShoppingSummary(props: { productsPrice: number, supplyPr
             <P>Twoja lista jest pusta</P>
           }
         </Ul>
-        <H4>Produkty: { props.productsPrice.toFixed(2) } zł</H4>
+        <H4>
+          Produkty: { props.productsPrice.toFixed(2) } zł &nbsp;
+          <InputStatusHolder 
+            isCorrect={ props.productsPrice >= 30 } 
+            errorMessage="Minimalna kwota to 30 zł"
+          />
+        </H4>
         <H4>Dostawa: { props.supplyPrice.toFixed(2) } zł</H4>
         <H3>Razem: 
             { (props.productsPrice + props.supplyPrice).toFixed(2) } zł

@@ -8,7 +8,7 @@ import gsap from 'gsap';
 const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, parentElement }) => {
 
   let { products, setCartProducts } = useContext(CartProducts);
-  const { Name, Image, Unit, Price, Availability } = productDetails;
+  const { Name, Image, Unit, Price, Availability, Category } = productDetails;
 
   const [isAnimated, setIsAnimated] = useState<boolean>(false);
 
@@ -24,6 +24,7 @@ const AddToCartButton: FC<IAddToCartButton> = ({ productDetails, parentElement }
         ammount: 1,
         unit: Unit,
         price: Price,
+        category: Category,
       }]);
   
       parentElement && gsap.timeline({ defaults: { duration: .3 } })

@@ -1,3 +1,4 @@
+import ECategories from './ECategories';
 import EUnits from './EUnits';
 
 export default interface ICartProduct {
@@ -6,4 +7,5 @@ export default interface ICartProduct {
   ammount: number,
   unit: EUnits,
   price: number,
+  category: ECategories,
 }

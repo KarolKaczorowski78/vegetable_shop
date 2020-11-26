@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Nav, NavRelative, BackgroundImage, NonProductsNavigationButton } from './styles';
+import { Nav, NavRelative, BackgroundImage, NonProductsNavigationButton, NavButtonsContainer } from './styles';
 import NavigationButton from '../../molecues/navigationButton';
 import ECategories from '../../../__types__/ECategories';
 import NavigationImg from '../../../img/navigationImg.jpg';
@@ -23,6 +23,7 @@ export default function Navigation() {
         >
           <span></span>
         </ShowNavigationButton>
+        <NavButtonsContainer>
         <NonProductsNavigationButton to="/">Strona główna</NonProductsNavigationButton>
         {
           Object.values(ECategories).map((category, i) =>
@@ -30,6 +31,7 @@ export default function Navigation() {
         }
         <BackgroundImage src={ NavigationImg } alt="" />
         <NonProductsNavigationButton to="/gallery">Galeria</NonProductsNavigationButton>
+        </NavButtonsContainer>
       </NavRelative>
     </Nav>
   )

@@ -1,18 +1,18 @@
 import React, { FC, useEffect } from 'react';
-import { Container, Img, H2, P } from './styles';
+import { Container, H2, P, ImgContainer } from './styles';
 import AddToCartButton from '../addToCartButton';
 import { useInView } from 'react-intersection-observer';
 import INewProduct from '../../../__types__/INewProduct';
 import gsap from 'gsap';
-import path from 'path';
-import  { } from '../../../'
+// import path from 'path';
+import NoImageContainer from '../noImageContainer';
 
 const Product: FC<INewProduct> = (props) => {
 
-  const { Name, Image, Price, Unit } = props;
-  const imgUrl = path.join('http://localhost:1337/upload/files/') + Image[0].name;
+  const { Name, Price, Unit, Category } = props;
+  // const imgUrl = path.join('http://localhost:1337/upload/files/') + Image[0].name;
   const { ref, inView, entry } = useInView({ 
-    threshold: .3,
+    threshold: .2,
     triggerOnce: true,
   });
 
@@ -22,7 +22,10 @@ const Product: FC<INewProduct> = (props) => {
 
   return (
     <Container ref={ ref }>
-      <Img src={ inView ? imgUrl : '' } alt="" />
+      <ImgContainer>
+        {/* <Img src={ inView ? imgUrl : '' } alt="" /> */}
+        <NoImageContainer category={ Category } />
+      </ImgContainer>
       <H2>{ Name }</H2>
       <P>{ 
         (Price && Unit) && `${Price.toFixed(2)} zł/${Unit}` 

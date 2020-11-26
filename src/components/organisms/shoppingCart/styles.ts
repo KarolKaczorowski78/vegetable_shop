@@ -25,6 +25,7 @@ export const Div = styled(DivProto)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-height: calc(100vh - 30px);
   @media (max-width: ${EBreakpoints.LAPTOP}) {
     width: 580px;
     margin-right: -290px;

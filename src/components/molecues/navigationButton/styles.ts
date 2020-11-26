@@ -3,7 +3,7 @@ import SpanProto from '../../atoms/span/span';
 
 export const ButtonStyle = css`
   width: 95%;
-  height: 50px;
+  height: 40px;
   color: white;
   text-decoration: none;
   text-transform: capitalize;
@@ -12,6 +12,8 @@ export const ButtonStyle = css`
   justify-content: center;
   align-items: center;
   border: 1px solid white;
+  flex-grow: 1;
+  min-height: 40px;
   margin: 5px 0;
 `;
 

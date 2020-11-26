@@ -23,14 +23,22 @@ export const Container = styled(Div)`
   }
 `;
 
-export const Img = styled(ImgProto)`
+export const ImgContainer = styled(Div)`
   width: 90%;
   height: 260px;
   box-shadow: 0 0 10px black;
   object-fit: cover;
+  position: relative;
+  margin: 0 auto;
   @media (max-width: ${EBreakpoints.TABLET}) {
     height: 150px;
   }
+`;
+
+export const Img = styled(ImgProto)`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 `;
 
 export const H2 = styled(H2Proto)`

@@ -12,8 +12,10 @@ import ICartProducts from './__types__/ICartProducts';
 
 export default function App() {
 
+  const defaultCartProductsValue = JSON.parse(localStorage.cartProducts) as ICartProduct[];
+
   const [currentCategory, setCurrentCategory] = useState<ECategories | false>(false);
-  const [cartProducts, setCartProducts] = useState<ICartProduct[]>([]);
+  const [cartProducts, setCartProducts] = useState<ICartProduct[]>(defaultCartProductsValue);
   const [searchFilter, setSearchFilter] = useState<string>('');
 
   const providerValue: IProductFilters = {
@@ -27,6 +29,12 @@ export default function App() {
     products: cartProducts,
     setCartProducts: setCartProducts,
   }
+
+  useEffect(() => {
+    localStorage.setItem(
+        'cartProducts', 
+        JSON.stringify(cartProducts.map(product => product)));
+  }, [cartProducts]);
   
   useEffect(() => { window.scrollTo(0, 0) }, [currentCategory]);
 
