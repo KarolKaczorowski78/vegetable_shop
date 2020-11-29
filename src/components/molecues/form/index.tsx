@@ -4,6 +4,7 @@ import H2 from '../../atoms/h2/h2';
 import ShoppingSummary from '../shoppingSummary';
 import FormInput from '../formInput';
 import SendingEmailStatusHolder from '../sendingEmailStatusHolder';
+import { EFormStatuses } from '../../../__types__/EFormStatuses';
 import { CartProducts } from '../../../contexts/cartProducts';
 import { sendEmail } from '../../../universal/sendEmail';
 import { isValidEmail } from '../../../universal/isValidEmail';
@@ -11,11 +12,12 @@ import { isValidPhoneNumber } from '../../../universal/isValidPhoneNumber';
 
 export default function OrderForm() {
 
+  const { DEFAULT, EMAIL_ERROR, EMAIL_SENT, FORM_INCORRECT } = EFormStatuses;
   const [customerName, setCustomerName] = useState<string>('');
   const [phoneNumber, setPhoneNumber] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [adress, setAdress] = useState<string>('');
-  const [isEmailSent, setIsEmailSent] = useState<boolean | undefined>(undefined);
+  const [formStatus, setFormStatus] = useState<EFormStatuses>(DEFAULT);
 
   const { products } = useContext(CartProducts);
 
@@ -27,7 +29,10 @@ export default function OrderForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (productsPrice >= 30 && isValidEmail(email) && isValidPhoneNumber(phoneNumber)) {
-      setIsEmailSent((await sendEmail(e)) as boolean | undefined);
+      const isEmailSent = await sendEmail(e);
+      setFormStatus(() => isEmailSent ? EMAIL_SENT : EMAIL_ERROR);
+    } else {
+      setFormStatus(() => FORM_INCORRECT);
     }
   }
 
@@ -103,8 +108,10 @@ export default function OrderForm() {
         supplyPrice={ supplyPrice }
       />
       <SendingEmailStatusHolder 
-        emailSent={ isEmailSent }
-        setEmailSent={ setIsEmailSent }
+        formStatus={ formStatus }
+        setFormStatus={ setFormStatus }
+        // emailSent={ isEmailSent }
+        // setEmailSent={ setIsEmailSent }
       />
     </Form>
   )

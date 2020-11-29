@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
+import { EFormStatuses } from './EFormStatuses';
 
 export default interface ISendingEmailStatusHolder {
-  emailSent: boolean | undefined,
-  setEmailSent: Dispatch<SetStateAction<boolean | undefined>>,
+  formStatus: EFormStatuses,
+  setFormStatus: Dispatch<SetStateAction<EFormStatuses>>,
 }
