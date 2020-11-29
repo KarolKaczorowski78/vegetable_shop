@@ -55,15 +55,22 @@ export default function Products() {
                                           searchFilter ? `Name_contains=${searchFilter}` : '',
                                           `_limit=${index}`, '_sort=Name:ASC'
                                         ])
+      
+      try {
+        const data = await fetch(url)
+        const products: INewProduct[] = await data.json();
+        
+        setTestProducts((previous) => {
+          products.length === previous.length && setShouldIncreaseIndex(() => false);
+  
+          return products;
+        })
+      }
+      catch(err) {
+        console.log(err);
+        setTestProducts(() => []);
+      }
 
-      const data = await fetch(url)
-
-      const products: INewProduct[] = await data.json();
-      setTestProducts((previous) => {
-        products.length === previous.length && setShouldIncreaseIndex(() => false);
-
-        return products;
-      })
     })()
   }, [filter, searchFilter, index])
 
@@ -75,8 +82,10 @@ export default function Products() {
         <H2>Bazarek Radzikowskiego</H2>
         <SearchInput />
         <ProductsContainer>
-          { testProducts.map((product, i) => {
-          return <Product { ...product } key={ i } />})
+          { 
+            testProducts.length > 0 ?
+            testProducts.map((product, i) => <Product { ...product } key={ i } />)
+            : <H2>Nie znaleziono żadnych produktów</H2>
           }
         </ProductsContainer>
       </Wrapper>
