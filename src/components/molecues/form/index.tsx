@@ -3,7 +3,7 @@ import { Form, Input, Label, Button, Div } from './styles';
 import H2 from '../../atoms/h2/h2';
 import ShoppingSummary from '../shoppingSummary';
 import FormInput from '../formInput';
-import SendingEmailStatusHolder from '../sendingEmailStatusHolder';
+import SendingEmailStatusHolder from '../formStatusHolder';
 import { EFormStatuses } from '../../../__types__/EFormStatuses';
 import { CartProducts } from '../../../contexts/cartProducts';
 import { sendEmail } from '../../../universal/sendEmail';
@@ -28,6 +28,7 @@ export default function OrderForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (productsPrice >= 30 && isValidEmail(email) && isValidPhoneNumber(phoneNumber)) {
       const isEmailSent = await sendEmail(e);
       setFormStatus(() => isEmailSent ? EMAIL_SENT : EMAIL_ERROR);
@@ -110,8 +111,6 @@ export default function OrderForm() {
       <SendingEmailStatusHolder 
         formStatus={ formStatus }
         setFormStatus={ setFormStatus }
-        // emailSent={ isEmailSent }
-        // setEmailSent={ setIsEmailSent }
       />
     </Form>
   )

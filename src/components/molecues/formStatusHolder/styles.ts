@@ -9,7 +9,7 @@ export const Div = styled(DivProto)`
   width: 90vw;
   height: 300px;
   height: auto;
-  padding: 50px 10px;
+  padding: 50px 15px;
   min-width: 280px;
   max-width: 800px;
   background: blue;
