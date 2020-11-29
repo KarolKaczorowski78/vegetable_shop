@@ -51,7 +51,7 @@ export default function Products() {
   useEffect(() => {
     (async () => {
       const url = constructUrl(process.env.REACT_APP_BASE_PRODUCTS_URL as string, [
-                                          filter ? `Category=${filter}` : '',
+                                          filter ? `Category_contains=${filter}` : '',
                                           searchFilter ? `Name_contains=${searchFilter}` : '',
                                           `_limit=${index}`, '_sort=Name:ASC'
                                         ])
@@ -59,7 +59,7 @@ export default function Products() {
       try {
         const data = await fetch(url)
         const products: INewProduct[] = await data.json();
-        
+
         setTestProducts((previous) => {
           products.length === previous.length && setShouldIncreaseIndex(() => false);
   

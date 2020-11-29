@@ -3,7 +3,7 @@ enum ECategories {
   VEGS = 'warzywa',
   ARTICLES = 'artykuły spożywcze',
   WEEDS = 'zioła i przyprawy',
-  APPLES = 'jabłka',
+  APPLES = 'jabłka owoce',
   SILAGE = 'kiszonki',
 }
 
