@@ -37,7 +37,10 @@ export const Div = styled(DivProto)`
   align-items: center;
   flex-direction: column;
   @media (max-width: ${EBreakpoints.TABLET_SMALL}) {
-    width: 300px;
+    width: 370px;
+  }
+  @media (max-width: ${EBreakpoints.MOBILE_BIG}) {
+    width: 280px;
   }
 `;  
 

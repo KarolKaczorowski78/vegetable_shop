@@ -25,7 +25,6 @@ export default function About() {
           text="Skontaktuj się z nami" 
           additionalStyle={ ButtonStyle } 
         />
-        {/* <Img src={ ShopOutsideImg } alt="" /> */}
       </Div>
       <Card img={ QualityAssuranceImg } text="Zdrowo i smacznie" />
       <BackgroundImage src={ AboutBackgroundImg } />

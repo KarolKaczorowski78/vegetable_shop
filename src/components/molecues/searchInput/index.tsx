@@ -8,7 +8,6 @@ export default function SearchFilter() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchFilter(() => e.target.value)
-    console.log(e.target.value);
   }
 
   return (
