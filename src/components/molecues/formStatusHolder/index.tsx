@@ -20,7 +20,7 @@ const FormStatusHolder: FC<IFormStatusHolder> = ({ formStatus, setFormStatus }) 
     getSupplyDate();
     switch(formStatus) {
       case FORM_INCORRECT:
-        return 'Proszę poprawnie uzupełnić formularz';
+        return 'Proszę spełnić wszystkie niezbędne warunki';
       case EMAIL_SENT:
         return 'Zamówienie wysłane pomyślnie! Dziękujemy!';
       case EMAIL_ERROR:
