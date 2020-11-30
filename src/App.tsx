@@ -9,6 +9,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { Routes } from './routes';
 import { GlobalStyle } from './theme/GlobalStyle';
 import ICartProducts from './__types__/ICartProducts';
+import Footer from './components/molecues/footer';
 
 export default function App() {
 
@@ -52,6 +53,7 @@ export default function App() {
                 )
               }
             </Switch>
+            <Footer />
           </CartProducts.Provider>
         </ProductFilters.Provider>
       </Router>
