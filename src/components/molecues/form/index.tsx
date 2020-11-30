@@ -9,6 +9,10 @@ import { CartProducts } from '../../../contexts/cartProducts';
 import { sendEmail } from '../../../universal/sendEmail';
 import { isValidEmail } from '../../../universal/isValidEmail';
 import { isValidPhoneNumber } from '../../../universal/isValidPhoneNumber';
+import CustomSelect from '../customSelect';
+import ValidationStatusHolder from '../validationStatusHolder';
+import { EPaymentMethods } from '../../../__types__/EPaymentMethods';
+
 
 export default function OrderForm() {
 
@@ -18,6 +22,7 @@ export default function OrderForm() {
   const [email, setEmail] = useState<string>('');
   const [adress, setAdress] = useState<string>('');
   const [formStatus, setFormStatus] = useState<EFormStatuses>(DEFAULT);
+  const [paymentMethod, setPaymentMethod] = useState<EPaymentMethods | undefined>(undefined);
 
   const { products } = useContext(CartProducts);
 
@@ -29,7 +34,7 @@ export default function OrderForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (productsPrice >= 30 && isValidEmail(email) && isValidPhoneNumber(phoneNumber)) {
+    if (productsPrice >= 30 && isValidEmail(email) && isValidPhoneNumber(phoneNumber) && paymentMethod) {
       const isEmailSent = await sendEmail(e);
       setFormStatus(() => isEmailSent ? EMAIL_SENT : EMAIL_ERROR);
     } else {
@@ -77,6 +82,9 @@ export default function OrderForm() {
         labelContent="Numer telefonu"
         errorMessage="Numer musi składać się z 9 cyfr"
       />
+      <h3>Metoda płatności { <ValidationStatusHolder isCorrect={ paymentMethod !== undefined } errorMessage="Wybierz metodę płatności" /> }</h3>
+      <CustomSelect value={ EPaymentMethods.CARD } state={ paymentMethod } setState={ setPaymentMethod } />
+      <CustomSelect value={ EPaymentMethods.CASH } state={ paymentMethod } setState={ setPaymentMethod } />
       <Button type="submit">
         Wyślij zamówienie
       </Button>

@@ -34,4 +34,7 @@ export const Message = styled(DivProto)`
   text-align: center;
   background: red;
   color: white;
+  font-size: .7rem;
+  font-family: Times New Roman;
+  font-weight: normal;
 `;
