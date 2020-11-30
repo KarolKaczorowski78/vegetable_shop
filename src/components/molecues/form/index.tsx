@@ -111,6 +111,14 @@ export default function OrderForm() {
           readOnly
         />
       </Label>
+      <Label htmlFor="payment-method" hidden>
+        <Input 
+          name="payment-method"
+          hidden
+          value={ paymentMethod }
+          readOnly
+        />
+      </Label>
       </Div>
       <ShoppingSummary 
         productsPrice={ productsPrice } 
