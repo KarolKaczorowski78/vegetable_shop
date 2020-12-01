@@ -82,7 +82,7 @@ export default function OrderForm() {
         labelContent="Numer telefonu"
         errorMessage="Numer musi składać się z 9 cyfr"
       />
-      <h3>Metoda płatności { <ValidationStatusHolder isCorrect={ paymentMethod !== undefined } errorMessage="Wybierz metodę płatności" /> }</h3>
+      <h3>Metoda płatności &nbsp;{ <ValidationStatusHolder isCorrect={ paymentMethod !== undefined } errorMessage="Wybierz metodę płatności" /> }</h3>
       <CustomSelect value={ EPaymentMethods.CARD } state={ paymentMethod } setState={ setPaymentMethod } />
       <CustomSelect value={ EPaymentMethods.CASH } state={ paymentMethod } setState={ setPaymentMethod } />
       <Button type="submit">
