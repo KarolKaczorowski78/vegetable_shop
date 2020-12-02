@@ -13,7 +13,8 @@ import Footer from './components/molecues/footer';
 
 export default function App() {
 
-  const defaultCartProductsValue = JSON.parse(localStorage.cartProducts) as ICartProduct[];
+  const defaultCartProductsValue = (localStorage.cartProducts ? 
+        JSON.parse(localStorage.cartProducts) : []) as ICartProduct[];
 
   const [currentCategory, setCurrentCategory] = useState<ECategories | false>(false);
   const [cartProducts, setCartProducts] = useState<ICartProduct[]>(defaultCartProductsValue);

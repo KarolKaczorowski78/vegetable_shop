@@ -5,5 +5,5 @@ import { FlattenSimpleInterpolation } from 'styled-components';
 export default interface IRedirectToProductsButton {
   children: ReactNode,
   category: ECategories,
-  additionalStyle: FlattenSimpleInterpolation,
+  additionalstyle: FlattenSimpleInterpolation,
 }

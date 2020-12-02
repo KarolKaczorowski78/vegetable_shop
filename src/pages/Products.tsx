@@ -49,6 +49,10 @@ export default function Products() {
   const ref = useBottomScrollListener<HTMLDivElement>(handleScrollToTheBottom);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [searchFilter, filter])
+
+  useEffect(() => {
     (async () => {
       const url = constructUrl(process.env.REACT_APP_BASE_PRODUCTS_URL as string, [
                                           filter ? `Category_contains=${filter}` : '',

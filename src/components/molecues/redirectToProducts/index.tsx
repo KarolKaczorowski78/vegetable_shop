@@ -5,16 +5,16 @@ import styled, { FlattenSimpleInterpolation } from 'styled-components';
 import LinkProto from '../../atoms/link/link';
 import IRedirectToProductsButton from '../../../__types__/IRedirectToProductsButton';
 
-const Link = styled(LinkProto)<{ additionalStyle: FlattenSimpleInterpolation }>`
+const Link = styled(LinkProto)<{ additionalstyle: FlattenSimpleInterpolation }>`
   text-decoration: none;
   color: black;
   width: auto;
   height: auto;
   position: static;
-  ${({ additionalStyle }) => additionalStyle};
+  ${({ additionalstyle }) => additionalstyle};
 `;
 
-const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, additionalStyle, category }) => {
+const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, additionalstyle, category }) => {
 
   const { filter ,setFilters } = useContext(ProductFilters);
 
@@ -33,7 +33,7 @@ const RedirectToProductsButton:FC<IRedirectToProductsButton> = ({ children, addi
     <Link 
       to="/products" 
       onClick={ handleClick } 
-      additionalStyle={ additionalStyle }
+      additionalstyle={ additionalstyle }
     >
       { children }
     </Link>

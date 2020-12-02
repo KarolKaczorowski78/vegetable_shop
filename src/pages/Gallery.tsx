@@ -23,7 +23,7 @@ export default function Gallery() {
   
 
   return (
-    <div style={{ textAlign: 'center', }}>
+    <div style={{ textAlign: 'center', minHeight: '100vh' }}>
       <H1>Galeria</H1>
       <H2>Bazarek Radzikowskiego</H2>
       <Slider components={ GalleryComponents } />

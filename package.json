@@ -2,7 +2,7 @@
   "name": "bazarek",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://karolkaczorowski78.github.io/vegetable_shop/",
+  "homepage": "https://localhost:5000",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -26,6 +26,14 @@
     "styled-components": "^5.2.1",
     "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"
+  },
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "calc": false
+      }
+    ]
   },
   "scripts": {
     "start": "react-scripts start",

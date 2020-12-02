@@ -10,7 +10,7 @@ const OfferCard: FC<IOfferCard> = ({ icon, img, category }) => {
     <Container>
       <H2>{ category }</H2>
       <Img src={ img } alt="" />
-      <RedirectToProductsButton category={ category } additionalStyle={ ButtonStyle }>
+      <RedirectToProductsButton category={ category } additionalstyle={ ButtonStyle }>
         <span>
           <span>
             Zobacz ofertę

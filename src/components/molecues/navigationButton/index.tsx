@@ -11,7 +11,7 @@ const NavigationButton:FC<INavigationButton> = ({ category }) => {
   const { filter } = useContext(ProductFilters);
 
   return (
-    <RedirectToProducts category={ category } additionalStyle={ ButtonStyle }>
+    <RedirectToProducts category={ category } additionalstyle={ ButtonStyle }>
       <Span>
       { category }
       { filter === category && <FontAwesomeIcon icon={ faCheck } /> }
