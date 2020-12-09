@@ -6,5 +6,8 @@ export const Footer = styled.footer`
   background: #c59459;
   text-align: center;
   border-top: 2px solid black;
-  padding: 1px 5px;
+  padding: 5px 10px;
+  & > h5 {
+    padding: 0;
+  }
 `;
